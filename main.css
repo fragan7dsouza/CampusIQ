@@ -1,0 +1,279 @@
+/* ------------------------------
+   GLOBAL SETTINGS
+--------------------------------*/
+:root {
+  --primary: #1E2A78;
+  --accent: #1F7A8C;
+  --orange: #ff9a3d;
+  --text: #1e1e1e;
+  --muted: #626d7a;
+  --bg: #f7f8fb;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ------------------------------
+   NAVBAR
+--------------------------------*/
+.header-top {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 99;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  background: rgba(0,0,0,0.05);
+  color: var(--primary);
+}
+.nav-links .cta:hover {
+  background: #ff8a1c !important;
+  color: white !important;
+  box-shadow: 0 6px 16px rgba(255,154,61,0.25);
+}
+
+.cta {
+  background: var(--orange);
+  color: white !important;
+  padding: 9px 16px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(255,154,61,0.2);
+}
+.cta:hover {
+  background: #ff8a1c;   /* slightly darker orange */
+  color: white !important;
+  opacity: 1;            /* prevents fading */
+}
+
+/* Mobile menu button */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--primary);
+}
+
+/* ------------------------------
+   FULL HERO BACKGROUND
+--------------------------------*/
+.hero-full {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.2)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 46px;
+  font-weight: 700;
+}
+
+.hero-content h2 {
+  font-size: 28px;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.cta-light {
+  background: rgba(255,255,255,0.18);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+}
+
+/* ------------------------------
+   SECTION STYLES
+--------------------------------*/
+.section {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 26px;
+}
+
+/* ------------------------------
+   GRID + CARDS
+--------------------------------*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  gap: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+}
+
+.thumb {
+  width: 150px;
+  height: 110px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin-bottom: 6px;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.card-link {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+.site-footer {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ------------------------------
+   RESPONSIVE
+--------------------------------*/
+@media (max-width: 900px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    background: white;
+    padding-top: 120px;
+    gap: 30px;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero-full {
+    padding-left: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content h2 {
+    font-size: 22px;
+  }
+}

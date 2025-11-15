@@ -59,6 +59,12 @@ body {
   color: #fff;
 }
 
+/* refinement: add focus styles for accessibility */
+.input-box input:focus {
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
 .input-box i {
   position: absolute;
   right: 20px;
@@ -101,6 +107,13 @@ body {
   font-size: 16px;
   color: #333;
   font-weight: 600;
+  transition: box-shadow 0.3s ease; /* added transition for smooth effect */
+}
+
+/* refinement: added focus style for button accessibility */
+.wrapper .btn:focus {
+  /* makes the shadow more prominent when tab-focused */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 .wrapper .register-link {

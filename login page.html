@@ -12,7 +12,7 @@
 
 <body>
   <div class="wrapper">
-    <form action="">
+    <form id="loginForm"> 
       <h1>Login</h1>
       <div class="input-box">
         <input type="text" placeholder="Username" required />
@@ -28,13 +28,36 @@
         <a href="#">Forgot password?</a>
       </div>
 
-      <button type="submit" class="btn"><a style="text-decoration: none;" href="notes.html">Login</a></button>
+      <button type="submit" class="btn">Login</button>
 
       <div class="register-link">
         <p>Don't have an account? <a href="#">Register</a></p>
       </div>
     </form>
   </div>
+
+  <script>
+    // javascript for client-side login simulation and form validation
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        // prevents the default form submit to an actual server
+        event.preventDefault(); 
+
+        // get the input fields
+        const usernameInput = this.querySelector('input[type="text"]');
+        const passwordInput = this.querySelector('input[type="password"]');
+
+        // basic client-side validation
+        if (usernameInput.value.trim() === "" || passwordInput.value.trim() === "") {
+            // alert message for missing fields
+            alert("please enter both username and password.");
+            return;
+        }
+
+        // if fields are not empty, simulate successful login and redirect
+        // in a real application, this is where you'd securely verify credentials.
+        window.location.href = "notes.html";
+    });
+  </script>
 </body>
 
 </html>

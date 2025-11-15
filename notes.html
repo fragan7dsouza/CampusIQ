@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes</title>
     <style>
+        /* local styles for chemistry.html */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -14,13 +15,19 @@
             background-color: #f4f4f4;
             background-image: url(notes.jpeg);
             background-size: cover;
-
             color: #333;
         }
 
-        h1 {
+        /* new style for main heading, replacing inline style */
+        .main-heading {
+            font-size: 45px;
             text-align: center;
             color: #333;
+        }
+        
+        .cycle-heading {
+            font-size: 45px;
+            text-align: center;
         }
 
         .container {
@@ -56,44 +63,74 @@
 
         .box {
             margin-top: 300px;
-
+        }
+        
+        /* style for the link inside dropdown content, replacing inline style */
+        .notes-link {
+            text-decoration: none;
         }
     </style>
 </head>
 
 <body>
     <div class="box">
-        <h1 style="font-size: 45px;"><u>MATERIAL FOR FIRST YEAR</u></h1>
+        <h1 class="main-heading"><u>MATERIAL FOR FIRST YEAR </u></h1>
+        <h1 class="cycle-heading"><u>CHEMISTRY CYCLE</u></h1>
 
         <div class="container">
-            <div class="dropdown" id="papers">
-                <h1>CHEMISTRY CYCLE </h1>
-                <div class="dropdown-content" id="papers-content">
-                    <a style="text-decoration: none;" href="chemistry.html">
+            <div class="dropdown">
+                <h1>CHEMISTRY </h1>
+                <div class="dropdown-content">
+                    <a class="notes-link"
+                        href="https://drive.google.com/drive/folders/1VBbFy8XttlVueGpo0EYm-WuSY6UfN8-t?usp=drive_link">
                         <h2>CLICK FOR NOTES</h2>
                     </a>
                 </div>
             </div>
-            <div class="dropdown" id="papers">
-                <h1>PHYSICS CYCLE </h1>
-                <div class="dropdown-content" id="papers-content">
-                    <a style="text-decoration: none;" href="physics.html">
+            <div class="dropdown">
+                <h1>MATHS </h1>
+                <div class="dropdown-content">
+                    <a class="notes-link" href="">
                         <h2>CLICK FOR NOTES</h2>
                     </a>
                 </div>
             </div>
-
+            <div class="dropdown">
+                <h1>BASIC ELECTRICAL ENGINEERING</h1>
+                <div class="dropdown-content">
+                    <a class="notes-link" href="">
+                        <h2>CLICK FOR NOTES</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <h1>APPLIED DIGITAL LOGICAL DESIGN </h1>
+                <div class="dropdown-content">
+                    <a class="notes-link" href="">
+                        <h2>CLICK FOR NOTES </h2>
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <h1>CPP </h1>
+                <div class="dropdown-content">
+                    <a class="notes-link" href="">
+                        <h2>CLICK FOR NOTES</h2>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <script>
+        // javascript for toggling dropdown content
         document.querySelectorAll('.dropdown').forEach(item => {
             item.addEventListener('click', function () {
                 let content = this.querySelector('.dropdown-content');
+                // check if the content is hidden or visible and toggle it
                 content.style.display = content.style.display === 'block' ? 'none' : 'block';
             });
         });
     </script>
-</body>
 </body>
 
 </html>
