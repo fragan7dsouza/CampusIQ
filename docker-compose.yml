@@ -1,0 +1,8 @@
+services:
+  campusiq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"  # access your app at http://localhost:8081
+    restart: always
